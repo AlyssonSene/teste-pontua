@@ -1,29 +1,29 @@
 import React from 'react'
 import {
-	BuildingContainer,
-	Container,
+	MainLoginPage,
 	LogoContainer,
-	MainLoginPage
+	Container,
+	BuildingContainer
 } from '../../../styles/loginStyles'
 import ImageAtom from '../../atoms/ImageAtom'
+import PassRecoveryMolecule from '../../molecules/PassRecoveryMolecule'
+import logoPontua from '../../../assets/logo_pontua_white.svg'
 import buildingImage from '../../../assets/building.svg'
-import LogoPontua from '../../../assets/logo_pontua_white.svg'
-import LoginOrganism from '../../organisms/LoginOrganism'
 
-const LoginPage: React.FC = () => {
+const RecoveryPassPage: React.FC = () => {
 	return (
 		<MainLoginPage>
 			<LogoContainer>
-				<ImageAtom src={LogoPontua} alt='logo da empresa' />
+				<ImageAtom src={logoPontua} alt='logo da empresa' />
 			</LogoContainer>
 			<Container>
 				<BuildingContainer>
 					<ImageAtom src={buildingImage} alt='building' />
 				</BuildingContainer>
-				<LoginOrganism />
+				<PassRecoveryMolecule />
 			</Container>
 		</MainLoginPage>
 	)
 }
 
-export default LoginPage
+export default RecoveryPassPage
