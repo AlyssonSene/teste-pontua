@@ -5,15 +5,16 @@ export interface IImageAtom {
 
 export interface IInputAtom {
 	type: string
+	placeholder: string
 }
 
 export interface IButtomAtom {
-	text?: string
+	text: string
 }
 
 export interface ITitleAtom {
 	text: string
-	color: string
+	color?: string
 }
 
 export interface ILinkAtom {

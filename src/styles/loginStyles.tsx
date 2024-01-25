@@ -38,26 +38,35 @@ export const FormLoginContainer = styled.div`
 	background: white;
 	margin: 167px 68px 0 0;
 `
-export const LoginButtom = styled.button`
+export const LoginButtom = styled.div`
 	display: flex;
-	width: 308px;
-	height: 57px;
-	padding: 16px 107px;
-	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	gap: 10px;
 	border-radius: 10px;
 	background: var(--blue-600, #081b4e);
-	color: var(--gray-150, #fbfbfb);
-	text-align: right;
-	font-family: Epilogue;
-	font-size: 24px;
-	font-style: normal;
-	font-weight: 700;
-	line-height: normal;
-	letter-spacing: -1.56px;
+	width: 306px;
 	cursor: pointer;
+
+	& > button {
+		border: none;
+		padding: 20px 10px;
+		background: var(--blue-600, #081b4e);
+		text-align: right;
+		font-family: Epilogue;
+		font-size: 24px;
+		font-style: normal;
+		font-weight: 700;
+		line-height: normal;
+		letter-spacing: -1.56px;
+		cursor: pointer;
+	}
+	& > span {
+		color: white;
+	}
+	& > img {
+		width: 18px;
+		height: 18px;
+	}
 `
 
 export const StyledSpan = styled.span`
@@ -69,22 +78,26 @@ export const LoginFormTitle = styled.div`
 	width: 100%;
 	text-align: left;
 	padding: 0 33px;
-	font-family: Epilogue;
-	font-size: 36px;
-	font-style: normal;
-	font-weight: 700;
-	line-height: normal;
-	letter-spacing: -2.34px;
+	& > span {
+		font-family: Epilogue;
+		font-size: 36px;
+		font-style: normal;
+		font-weight: 700;
+		line-height: normal;
+		letter-spacing: -2.34px;
+	}
 `
 export const LoginFormSubtitle = styled.div`
 	width: 310px;
-	color: var(--gray-500, #777);
-	font-family: Epilogue;
-	font-size: 16px;
-	font-style: normal;
-	font-weight: 400;
-	line-height: 127%;
-	letter-spacing: -1.04px;
+	& > span {
+		color: var(--gray-500, #777);
+		font-family: Epilogue;
+		font-size: 16px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 127%;
+		letter-spacing: -1.04px;
+	}
 `
 
 export const LoginEmailInput = styled.div`
@@ -98,25 +111,29 @@ export const LoginEmailInput = styled.div`
 	& > input {
 		border: none;
 		outline: none;
-		display: inline-flex;
 		padding: 20px 0;
 		align-items: center;
 		color: var(--blue-500, #293d71);
 		font-family: Epilogue;
 		font-size: 16px;
 		font-style: normal;
-		font-weight: 700;
 		line-height: normal;
 		letter-spacing: -1.04px;
 	}
 `
 export const LoginPassInput = styled.div`
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	border-radius: 10px;
+	border: 0.7px solid var(--gray-400, #b7b7b7);
+	background: var(--white-0, #fff);
+	width: 306px;
 	& > input {
-		width: 308px;
-		padding: 20px 15px;
-		border-radius: 10px;
-		border: 0.7px solid var(--gray-400, #b7b7b7);
-		background: var(--white-0, #fff);
+		border: none;
+		outline: none;
+		padding: 20px 0;
+		align-items: center;
 		color: var(--gray-400, #b7b7b7);
 		font-family: Epilogue;
 		font-size: 16px;
@@ -128,6 +145,8 @@ export const LoginPassInput = styled.div`
 `
 
 export const InputIcon = styled.div`
+	width: 13px;
+	height: 13px;
 	& > button {
 		border: none;
 		cursor: pointer;

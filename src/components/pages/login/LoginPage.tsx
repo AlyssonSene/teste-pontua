@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import FormLoginMolecule from '../../molecules/FormLoginMolecule'
 import {
 	BuildingContainer,
@@ -9,8 +9,11 @@ import {
 import ImageAtom from '../../atoms/ImageAtom'
 import buildingImage from '../../../assets/building.svg'
 import LogoPontua from '../../../assets/logo_pontua_white.svg'
+import PassRecoveryMolecule from '../../molecules/PassRecoveryMolecule'
 
 const LoginPage: React.FC = () => {
+	const [recoveryPass] = useState(false)
+
 	return (
 		<MainLoginPage>
 			<LogoContainer>
@@ -20,7 +23,7 @@ const LoginPage: React.FC = () => {
 				<BuildingContainer>
 					<ImageAtom src={buildingImage} alt='building' />
 				</BuildingContainer>
-				<FormLoginMolecule />
+				{recoveryPass ? <FormLoginMolecule /> : <PassRecoveryMolecule />}
 			</Container>
 		</MainLoginPage>
 	)
