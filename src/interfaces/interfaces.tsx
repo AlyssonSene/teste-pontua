@@ -36,3 +36,7 @@ export interface IOptions {
 export interface IOptionsSelect {
 	options: IOptions[]
 }
+
+export interface ICaretIconProps {
+	rotate: string
+}

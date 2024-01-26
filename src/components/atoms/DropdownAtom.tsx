@@ -5,20 +5,31 @@ import { IOptions, IOptionsSelect } from '../../interfaces/interfaces'
 const DropdownAtom: React.FC<IOptionsSelect> = ({ options }) => {
 	const [isOpen, setIsOpen] = useState(false)
 	const [agent, setAgent] = useState<IOptions | null>(options[0])
+	const [rotated, setRotated] = useState(false)
 
 	const handleOptionClick = (agent: IOptions) => {
 		setAgent(agent)
 		setIsOpen(!isOpen)
+		setRotated(!rotated)
+	}
+
+	const handleClick = (value: boolean) => {
+		setRotated(!value)
 	}
 
 	return (
 		<Styled.DropdownContainer>
-			<Styled.DropdownButton onClick={() => setIsOpen(!isOpen)}>
+			<Styled.DropdownButton
+				onClick={() => {
+					setIsOpen(!isOpen)
+					handleClick(rotated)
+				}}
+			>
 				<Styled.SelectedOption>
 					<Styled.Avatar src={agent?.avatar} alt={'avatar'} />
 					<Styled.Name>{agent?.name}</Styled.Name>
 				</Styled.SelectedOption>
-				<Styled.CaretIcon />
+				<Styled.CaretIcon rotate={rotated.toString()} />
 			</Styled.DropdownButton>
 			<Styled.OptionsContainer style={{ display: isOpen ? 'block' : 'none' }}>
 				<Styled.OptionsList>

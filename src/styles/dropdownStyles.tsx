@@ -1,4 +1,5 @@
-import { styled } from 'styled-components'
+import styled from 'styled-components'
+import { ICaretIconProps } from '../interfaces/interfaces'
 
 export const DropdownContainer = styled.div`
 	width: 331px;
@@ -42,14 +43,19 @@ export const Name = styled.span`
 	margin: 0 15px;
 `
 
-export const CaretIcon = styled.span`
-	display: inline-block;
-	width: 0;
-	height: 0;
-	border-left: 6px solid transparent;
-	border-right: 6px solid transparent;
-	border-top: 6px solid #333;
-	margin-left: 8px;
+export const CaretIcon = styled.span<ICaretIconProps>`
+	position: relative;
+	padding: 8px;
+	box-shadow: 2px -2px 0 1px #667085 inset;
+	border: none;
+	border-width: 0 0 2px 2px;
+	margin-right: 15px;
+	transition: transform 0.3s ease;
+	cursor: pointer;
+	transform: ${props =>
+		props.rotate == 'true'
+			? 'rotate(135deg) scale(1.1)'
+			: 'rotate(-45deg) scale(1.1)'};
 `
 
 export const OptionsContainer = styled.div`
@@ -89,4 +95,16 @@ export const Option = styled.li`
 		font-weight: 500;
 		line-height: 24px;
 	}
+`
+
+export const EnterButton = styled.div`
+	display: flex;
+	padding: 12px 20px;
+	justify-content: center;
+	align-items: center;
+	gap: 8px;
+	border-radius: 8px;
+	border: 1px solid var(--blue-800, #00113d);
+	background: var(--blue-800, #00113d);
+	box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
 `
