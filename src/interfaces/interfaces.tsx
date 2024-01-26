@@ -26,3 +26,13 @@ export interface IButtonImage {
 	icon: string
 	type: string
 }
+
+export interface IOptions {
+	avatar: string
+	name: string
+	id: number
+}
+
+export interface IOptionsSelect {
+	options: IOptions[]
+}

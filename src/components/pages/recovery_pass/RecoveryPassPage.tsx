@@ -1,28 +1,25 @@
-import React from 'react'
-import {
-	MainLoginPage,
-	LogoContainer,
-	Container,
-	BuildingContainer
-} from '../../../styles/loginStyles'
+import React, { useState } from 'react'
+import * as Styled from '../../../styles/loginStyles'
 import ImageAtom from '../../atoms/ImageAtom'
 import PassRecoveryMolecule from '../../molecules/PassRecoveryMolecule'
 import logoPontua from '../../../assets/logo_pontua_white.svg'
 import buildingImage from '../../../assets/building.svg'
+import SuccessRecovery from '../../molecules/SuccessRecoveryMolecule'
 
 const RecoveryPassPage: React.FC = () => {
+	const [teste] = useState(true)
 	return (
-		<MainLoginPage>
-			<LogoContainer>
+		<Styled.MainLoginPage>
+			<Styled.LogoContainer>
 				<ImageAtom src={logoPontua} alt='logo da empresa' />
-			</LogoContainer>
-			<Container>
-				<BuildingContainer>
+			</Styled.LogoContainer>
+			<Styled.Container>
+				<Styled.BuildingContainer>
 					<ImageAtom src={buildingImage} alt='building' />
-				</BuildingContainer>
-				<PassRecoveryMolecule />
-			</Container>
-		</MainLoginPage>
+				</Styled.BuildingContainer>
+				{teste ? <SuccessRecovery /> : <PassRecoveryMolecule />}
+			</Styled.Container>
+		</Styled.MainLoginPage>
 	)
 }
 

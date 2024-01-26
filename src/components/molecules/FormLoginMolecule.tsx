@@ -1,13 +1,5 @@
 import React from 'react'
-import {
-	FormLoginContainer,
-	LinkForgotPass,
-	LoginButtom,
-	LoginEmailInput,
-	LoginFormSubtitle,
-	LoginFormTitle,
-	LoginPassInput
-} from '../../styles/loginStyles'
+import * as Styled from '../../styles/loginStyles'
 import ButtomAtom from '../atoms/ButtonAtom'
 import ImageAtom from '../atoms/ImageAtom'
 import InputAtom from '../atoms/InputAtom'
@@ -21,38 +13,38 @@ import loginIcon from '../../assets/login.svg'
 
 const FormLoginMolecule: React.FC = () => {
 	return (
-		<FormLoginContainer>
-			<LoginFormTitle>
+		<Styled.FormLoginContainer>
+			<Styled.LoginFormTitle>
 				<TitleAtom color={'#081B4E'} text='Bem-Vindo'></TitleAtom>
 				<TitleAtom color={'#F43724'} text='.'></TitleAtom>
-			</LoginFormTitle>
+			</Styled.LoginFormTitle>
 
-			<LoginFormSubtitle>
+			<Styled.LoginFormSubtitle>
 				<TitleAtom
 					color={'#777'}
 					text='Informe as suas credenciais de acesso ao portal'
 				></TitleAtom>
-			</LoginFormSubtitle>
+			</Styled.LoginFormSubtitle>
 
-			<LoginEmailInput>
+			<Styled.LoginEmailInput>
 				<InputAtom placeholder={'Informe seu email'} type={'email'} />
 				<ButtonImage type={'email'} icon={emailIcon} />
-			</LoginEmailInput>
+			</Styled.LoginEmailInput>
 
-			<LoginPassInput>
+			<Styled.LoginPassInput>
 				<InputAtom placeholder={'Informe sua senha'} type={'password'} />
 				<ButtonImage type={'password'} icon={secretIcon} />
-			</LoginPassInput>
-			<LoginButtom>
+			</Styled.LoginPassInput>
+			<Styled.LoginButtom>
 				<ButtomAtom text='Entrar'></ButtomAtom>
 				<ButtonImage type={'email'} icon={loginIcon} />
-			</LoginButtom>
+			</Styled.LoginButtom>
 
-			<LinkForgotPass>
+			<Styled.LinkForgotPass>
 				<ImageAtom alt='icone' src={forgotIcon} />
 				<LinkAtom text='Esqueceu a senha?' url='' />
-			</LinkForgotPass>
-		</FormLoginContainer>
+			</Styled.LinkForgotPass>
+		</Styled.FormLoginContainer>
 	)
 }
 

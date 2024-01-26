@@ -1,10 +1,5 @@
 import React from 'react'
-import {
-	BuildingContainer,
-	Container,
-	LogoContainer,
-	MainLoginPage
-} from '../../../styles/loginStyles'
+import * as Styled from '../../../styles/loginStyles'
 import ImageAtom from '../../atoms/ImageAtom'
 import buildingImage from '../../../assets/building.svg'
 import LogoPontua from '../../../assets/logo_pontua_white.svg'
@@ -12,17 +7,17 @@ import LoginOrganism from '../../organisms/LoginOrganism'
 
 const LoginPage: React.FC = () => {
 	return (
-		<MainLoginPage>
-			<LogoContainer>
+		<Styled.MainLoginPage>
+			<Styled.LogoContainer>
 				<ImageAtom src={LogoPontua} alt='logo da empresa' />
-			</LogoContainer>
-			<Container>
-				<BuildingContainer>
+			</Styled.LogoContainer>
+			<Styled.Container>
+				<Styled.BuildingContainer>
 					<ImageAtom src={buildingImage} alt='building' />
-				</BuildingContainer>
+				</Styled.BuildingContainer>
 				<LoginOrganism />
-			</Container>
-		</MainLoginPage>
+			</Styled.Container>
+		</Styled.MainLoginPage>
 	)
 }
 

@@ -151,8 +151,8 @@ export const InputIcon = styled.div`
 		border: none;
 		cursor: pointer;
 	}
+	
 `
-
 export const LinkForgotPass = styled.div`
 	width: 100%;
 	height: 14px;
