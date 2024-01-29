@@ -3,13 +3,14 @@ import styled from 'styled-components'
 export const HomePageContainer = styled.div`
 	display: flex;
 	height: 100vh;
-	background: #d82a2a;
+	background: #eaecf0;
 	box-shadow: 6px 0px 18px 0px rgba(0, 0, 0, 0.06);
 `
 
 export const DashboardContainer = styled.div`
 	display: flex;
 	flex-direction: column;
+	width: 1366px;
 `
 
 export const HomeMenuContainer = styled.div`
@@ -17,14 +18,13 @@ export const HomeMenuContainer = styled.div`
 	flex-direction: column;
 	align-items: center;
 	width: 256px;
-	background: #fff;
+	background: #eaecf0;
 	box-shadow: 6px 0px 18px 0px rgba(0, 0, 0, 0.06);
 `
 
 export const SearchBarContainer = styled.div`
-	width: 100vw;
 	height: 80px;
-	background: #fff;
+	background: #eaecf0;
 	display: flex;
 	justify-content: flex-start;
 	align-items: center;
@@ -40,7 +40,7 @@ export const SearchBarContainer = styled.div`
 		border: none;
 		width: 321px;
 		height: 22px;
-		color: var(--blue-200, #747d94);
+		color: #747d94;
 		font-family: Epilogue;
 		font-size: 14px;
 		font-style: normal;
@@ -69,7 +69,7 @@ export const HomeButtonContainer = styled.div`
 		height: 12px;
 		justify-content: center;
 		align-items: center;
-		color: var(--black, #000);
+		color: #000;
 		font-family: Epilogue;
 		font-size: 16px;
 		font-style: normal;
@@ -93,7 +93,7 @@ export const LogoutButtonContainer = styled.div`
 		height: 12px;
 		justify-content: center;
 		align-items: center;
-		color: var(--black, #000);
+		color: #000;
 		font-family: Epilogue;
 		font-size: 16px;
 		font-style: normal;
@@ -104,15 +104,33 @@ export const LogoutButtonContainer = styled.div`
 	}
 `
 
+export const Dashoboard = styled.div`
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	height: 100vh;
+`
+
 export const CardsContainer = styled.div`
 	display: flex;
 	width: 100%;
 	flex-wrap: wrap;
+	justify-content: center;
+	& > :nth-last-child(-n + 2) {
+		flex-grow: 0.2;
+		align-items: flex-start;
+		& > :nth-last-child(-n + 1) {
+			& > :nth-last-child(-n + 1) {
+				width: 410px;
+			}
+		}
+	}
 `
 
 export const Card = styled.div`
 	display: flex;
-	margin: 20px;
+	margin: 20px 0 0 20px;
 	align-items: center;
 	padding: 14px 10px;
 	border-radius: 15px;
@@ -135,7 +153,7 @@ export const CardDescription = styled.div`
 
 export const AgentName = styled.div`
 	& span {
-		color: var(--black, #000);
+		color: #000;
 		font-family: Epilogue;
 		font-size: 16px;
 		font-style: normal;
@@ -148,12 +166,40 @@ export const AgentName = styled.div`
 export const AgentDescription = styled.div`
 	width: 140px;
 	& > span {
-		color: var(--black, #000);
+		color: #000;
 		font-family: Epilogue;
 		font-size: 12px;
 		font-style: normal;
 		font-weight: 300;
 		line-height: normal;
 		letter-spacing: -0.36px;
+	}
+`
+
+export const PagesContainer = styled.div`
+	display: flex;
+	width: 1055px;
+	padding: 12px 24px 16px 24px;
+	justify-content: center;
+	cursor: pointer;
+`
+
+export const PagesNumber = styled.div`
+	display: flex;
+	height: 40px;
+	width: 40px;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background: #fff;
+	border: 1px solid #d0d5dd;
+	background: #fff;
+	& span {
+		color: var(--blue-200, #747d94);
+		font-family: Epilogue;
+		font-size: 14px;
+		font-style: normal;
+		font-weight: 500;
+		line-height: 20px; /* 142.857% */
 	}
 `
