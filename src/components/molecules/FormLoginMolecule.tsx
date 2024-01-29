@@ -10,6 +10,7 @@ import ButtonImage from '../atoms/ButtonImage'
 import emailIcon from '../../assets/emailIcon.svg'
 import secretIcon from '../../assets/passSecrete.svg'
 import loginIcon from '../../assets/login.svg'
+import { Link } from 'react-router-dom'
 
 const FormLoginMolecule: React.FC = () => {
 	return (
@@ -42,7 +43,9 @@ const FormLoginMolecule: React.FC = () => {
 
 			<Styled.LinkForgotPass>
 				<ImageAtom alt='icone' src={forgotIcon} />
-				<LinkAtom text='Esqueceu a senha?' url='' />
+				<Link to={'/recovery'}>
+					<LinkAtom text='Esqueceu a senha?' />
+				</Link>
 			</Styled.LinkForgotPass>
 		</Styled.FormLoginContainer>
 	)

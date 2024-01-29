@@ -40,3 +40,7 @@ export interface IOptionsSelect {
 export interface ICaretIconProps {
 	rotate: string
 }
+
+export interface ISpan {
+	text: string
+}

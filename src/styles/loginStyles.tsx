@@ -43,14 +43,14 @@ export const LoginButtom = styled.div`
 	justify-content: center;
 	align-items: center;
 	border-radius: 10px;
-	background: var(--blue-600, #081b4e);
+	background: #081b4e;
 	width: 306px;
 	cursor: pointer;
 
 	& > button {
 		border: none;
 		padding: 20px 10px;
-		background: var(--blue-600, #081b4e);
+		background: #081b4e;
 		text-align: right;
 		font-family: Epilogue;
 		font-size: 24px;
@@ -74,7 +74,7 @@ export const StyledSpan = styled.span`
 `
 
 export const LoginFormTitle = styled.div`
-	color: var(--blue-600, #081b4e);
+	color: #081b4e;
 	width: 100%;
 	text-align: left;
 	padding: 0 33px;
@@ -90,7 +90,7 @@ export const LoginFormTitle = styled.div`
 export const LoginFormSubtitle = styled.div`
 	width: 310px;
 	& > span {
-		color: var(--gray-500, #777);
+		color: #777;
 		font-family: Epilogue;
 		font-size: 16px;
 		font-style: normal;
@@ -105,15 +105,15 @@ export const LoginEmailInput = styled.div`
 	justify-content: space-around;
 	align-items: center;
 	border-radius: 10px;
-	border: 0.7px solid var(--blue-500, #293d71);
-	background: var(--white-0, #fff);
+	border: 0.7px solid #293d71;
+	background: #fff;
 	width: 306px;
 	& > input {
 		border: none;
 		outline: none;
 		padding: 20px 0;
 		align-items: center;
-		color: var(--blue-500, #293d71);
+		color: #293d71;
 		font-family: Epilogue;
 		font-size: 16px;
 		font-style: normal;
@@ -126,15 +126,15 @@ export const LoginPassInput = styled.div`
 	justify-content: space-around;
 	align-items: center;
 	border-radius: 10px;
-	border: 0.7px solid var(--gray-400, #b7b7b7);
-	background: var(--white-0, #fff);
+	border: 0.7px solid #b7b7b7;
+	background: #fff;
 	width: 306px;
 	& > input {
 		border: none;
 		outline: none;
 		padding: 20px 0;
 		align-items: center;
-		color: var(--gray-400, #b7b7b7);
+		color: #b7b7b7;
 		font-family: Epilogue;
 		font-size: 16px;
 		font-style: normal;
@@ -151,7 +151,6 @@ export const InputIcon = styled.div`
 		border: none;
 		cursor: pointer;
 	}
-	
 `
 export const LinkForgotPass = styled.div`
 	width: 100%;
@@ -162,7 +161,7 @@ export const LinkForgotPass = styled.div`
 	align-items: center;
 	margin: 0 36px 0 10px;
 	& > a {
-		color: var(--orange-700, #f21a05);
+		color: #f21a05;
 		text-align: right;
 		font-family: Epilogue;
 		font-size: 11px;

@@ -9,7 +9,7 @@ const LoginPage: React.FC = () => {
 	return (
 		<Styled.MainLoginPage>
 			<Styled.LogoContainer>
-				<ImageAtom src={LogoPontua} alt='logo da empresa' />
+				<ImageAtom src={LogoPontua} alt='company logo' />
 			</Styled.LogoContainer>
 			<Styled.Container>
 				<Styled.BuildingContainer>

@@ -99,12 +99,22 @@ export const Option = styled.li`
 
 export const EnterButton = styled.div`
 	display: flex;
-	padding: 12px 20px;
-	justify-content: center;
+	width: 100%;
+	justify-content: flex-end;
+	margin-right: 37px;
 	align-items: center;
-	gap: 8px;
-	border-radius: 8px;
-	border: 1px solid var(--blue-800, #00113d);
-	background: var(--blue-800, #00113d);
-	box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+	& > button {
+		border-radius: 8px;
+		border: 1px solid var(--blue-800, #00113d);
+		background: var(--blue-800, #00113d);
+		box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+		padding: 12px 20px;
+		color: var(--White, #fff);
+		font-family: Inter;
+		font-size: 16px;
+		font-style: normal;
+		font-weight: 600;
+		line-height: 24px;
+		cursor: pointer;
+	}
 `

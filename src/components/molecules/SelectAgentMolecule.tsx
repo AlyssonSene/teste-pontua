@@ -1,8 +1,10 @@
 import React from 'react'
 import * as Styled from '../../styles/loginStyles'
 import TitleAtom from '../atoms/TitleAtom'
-import Dropdown from '../atoms/DropdownAtom'
+import Dropdown from './DropdownMolecule'
 import avatar from '../../assets/pontua.ico'
+import { EnterButton } from '../../styles/dropdownStyles'
+import ButtonAtom from '../atoms/ButtonAtom'
 
 const SelectAgentMolecule: React.FC = () => {
 	const options = [
@@ -31,6 +33,9 @@ const SelectAgentMolecule: React.FC = () => {
 				></TitleAtom>
 			</Styled.LoginFormSubtitle>
 			<Dropdown options={options} />
+			<EnterButton>
+				<ButtonAtom text='Entrar' />
+			</EnterButton>
 		</Styled.FormLoginContainer>
 	)
 }

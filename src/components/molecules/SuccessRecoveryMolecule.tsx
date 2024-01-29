@@ -2,6 +2,7 @@ import React from 'react'
 import * as Styled from '../../styles/loginStyles'
 import TitleAtom from '../atoms/TitleAtom'
 import ButtomAtom from '../atoms/ButtonAtom'
+import { Link } from 'react-router-dom'
 
 const SuccessRecovery: React.FC = () => {
 	return (
@@ -17,7 +18,9 @@ const SuccessRecovery: React.FC = () => {
 				></TitleAtom>
 			</Styled.LoginFormSubtitle>
 			<Styled.LoginButtom>
-				<ButtomAtom text='Voltar para o login'></ButtomAtom>
+				<Link to={'/login'}>
+					<ButtomAtom text='Voltar para o login'></ButtomAtom>
+				</Link>
 			</Styled.LoginButtom>
 		</Styled.FormLoginContainer>
 	)

@@ -7,11 +7,11 @@ import buildingImage from '../../../assets/building.svg'
 import SuccessRecovery from '../../molecules/SuccessRecoveryMolecule'
 
 const RecoveryPassPage: React.FC = () => {
-	const [teste] = useState(true)
+	const [teste] = useState(false)
 	return (
 		<Styled.MainLoginPage>
 			<Styled.LogoContainer>
-				<ImageAtom src={logoPontua} alt='logo da empresa' />
+				<ImageAtom src={logoPontua} alt='company logo' />
 			</Styled.LogoContainer>
 			<Styled.Container>
 				<Styled.BuildingContainer>
