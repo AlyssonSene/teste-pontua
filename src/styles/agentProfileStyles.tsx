@@ -59,6 +59,10 @@ export const MenuOptions = styled.div`
 	margin-right: 16px;
 	height: 38px;
 	cursor: pointer;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+
 	& > span {
 		color: #081b4e;
 		font-family: Epilogue;
@@ -66,6 +70,14 @@ export const MenuOptions = styled.div`
 		font-style: normal;
 		font-weight: 500;
 		line-height: 20px;
+		& > a {
+			text-decoration: none;
+			color: #081b4e;
+		}
+		& > a:visited {
+			text-decoration: none;
+			color: #081b4e;
+		}
 	}
 `
 
@@ -82,6 +94,8 @@ export const AboutAgentContainer = styled.div`
 	padding: 42px 34px;
 	height: 226px;
 	display: flex;
+	border-radius: 15px;
+	box-shadow: 0px 6px 18px 0px rgba(0, 0, 0, 0.06);
 `
 
 export const DescriptionContainer = styled.div`
@@ -112,4 +126,18 @@ export const AgentDescription = styled.span`
 	font-weight: 600;
 	line-height: 153.5%; /* 24.56px */
 	letter-spacing: -0.48px;
+`
+
+export const InfosContainer = styled.div`
+	display: flex;
+	margin: 40px 0 0 10px;
+	flex-direction: column;
+	align-items: flex-start;
+	& ul {
+		margin-left: 10px;
+		color: #667085;
+		& li {
+			padding: 5px;
+		}
+	}
 `

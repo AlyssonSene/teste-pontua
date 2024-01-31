@@ -44,3 +44,7 @@ export interface ICaretIconProps {
 export interface ISpan {
 	text: string
 }
+
+export interface IListOptions {
+	list: string[]
+}
