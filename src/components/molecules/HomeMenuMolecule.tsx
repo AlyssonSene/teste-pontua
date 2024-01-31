@@ -5,7 +5,7 @@ import LogoPontua from '../../assets/logo_pontua.svg'
 import HomeIcon from '../../assets/homeIcon.svg'
 import profileIcon from '../../assets/profileIcon.svg'
 import LogoutIcon from '../../assets/logoutIcon.svg'
-import SpanAtom from '../atoms/SpanAtom'
+import TitleAtom from '../atoms/TitleAtom'
 
 const HomeMenuMolecule: React.FC = () => {
 	return (
@@ -15,15 +15,15 @@ const HomeMenuMolecule: React.FC = () => {
 			</Styled.LogoContainer>
 			<Styled.HomeButtonContainer>
 				<ImageAtom src={HomeIcon} alt='home icon' />
-				<SpanAtom text='Home' />
+				<TitleAtom text='Home' color='#F21A05' />
 			</Styled.HomeButtonContainer>
 			<Styled.HomeButtonContainer>
 				<ImageAtom src={profileIcon} alt='profile icon' />
-				<SpanAtom text='Perfil' />
+				<TitleAtom text='Perfil' />
 			</Styled.HomeButtonContainer>
 			<Styled.LogoutButtonContainer>
 				<ImageAtom src={LogoutIcon} alt='Logout icon' />
-				<SpanAtom text='Sair' />
+				<TitleAtom text='Sair' />
 			</Styled.LogoutButtonContainer>
 		</Styled.HomeMenuContainer>
 	)

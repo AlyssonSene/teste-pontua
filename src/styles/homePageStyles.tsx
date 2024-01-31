@@ -69,7 +69,6 @@ export const HomeButtonContainer = styled.div`
 		height: 12px;
 		justify-content: center;
 		align-items: center;
-		color: #000;
 		font-family: Epilogue;
 		font-size: 16px;
 		font-style: normal;
@@ -113,6 +112,12 @@ export const Dashoboard = styled.div`
 `
 
 export const CardsContainer = styled.div`
+	& span {
+		:hover {
+			background: #c6cbd4;
+		}
+	}
+	cursor: pointer;
 	display: flex;
 	width: 100%;
 	flex-wrap: wrap;
@@ -193,13 +198,12 @@ export const PagesNumber = styled.div`
 	align-items: center;
 	background: #fff;
 	border: 1px solid #d0d5dd;
-	background: #fff;
 	& span {
-		color: var(--blue-200, #747d94);
+		color: #747d94;
 		font-family: Epilogue;
 		font-size: 14px;
 		font-style: normal;
 		font-weight: 500;
-		line-height: 20px; /* 142.857% */
+		line-height: 20px;
 	}
 `
