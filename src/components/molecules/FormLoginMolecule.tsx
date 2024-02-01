@@ -36,10 +36,12 @@ const FormLoginMolecule: React.FC = () => {
 				<InputAtom placeholder={'Informe sua senha'} type={'password'} />
 				<ButtonImage type={'password'} icon={secretIcon} />
 			</Styled.LoginPassInput>
-			<Styled.LoginButtom>
-				<ButtomAtom text='Entrar'></ButtomAtom>
-				<ButtonImage type={'email'} icon={loginIcon} />
-			</Styled.LoginButtom>
+			<Link to={'/home'}>
+				<Styled.LoginButtom>
+					<ButtomAtom text='Entrar'></ButtomAtom>
+					<ButtonImage type={'email'} icon={loginIcon} />
+				</Styled.LoginButtom>
+			</Link>
 
 			<Styled.LinkForgotPass>
 				<ImageAtom alt='icone' src={forgotIcon} />

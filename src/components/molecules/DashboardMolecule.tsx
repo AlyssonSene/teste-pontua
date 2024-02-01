@@ -1,40 +1,45 @@
 import React from 'react'
 import * as Styled from '../../styles/homePageStyles'
 import SearchBar from './SearchbarMolecule'
-import { useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import ImageAtom from '../atoms/ImageAtom'
-import ImageTeste from '../../assets/imageAgentTeste.svg'
 import SpanAtom from '../atoms/SpanAtom'
 import ArrowLeft from '../../assets/arrowLeftIcon.svg'
 import ArrowRight from '../../assets/arrowRightIcon.svg'
+import { useAppContext } from '../../context/hook'
 
 const DashboardMolecule: React.FC = () => {
-	const textDescription =
-		'Born with super-human senses and the power to heal from almost any wound, Wolverine was captured by a secret Canadian organization and given an unbreakable ...'
+	const {
+		state: { agents }
+	} = useAppContext()
 
-	const history = useNavigate()
-
-	const navigateToProfile = () => {
-		history(`/user-profile/`)
-	}
 	return (
 		<Styled.DashboardContainer>
 			<SearchBar />
 			<Styled.Dashoboard>
 				<Styled.CardsContainer>
-					<Styled.Card onClick={navigateToProfile}>
-						<Styled.CardImage>
-							<ImageAtom src={ImageTeste} alt='agent image' />
-						</Styled.CardImage>
-						<Styled.CardDescription>
-							<Styled.AgentName>
-								<SpanAtom text='Wolverine' />
-							</Styled.AgentName>
-							<Styled.AgentDescription>
-								<SpanAtom text={textDescription} />
-							</Styled.AgentDescription>
-						</Styled.CardDescription>
-					</Styled.Card>
+					{agents.map(agent => {
+						return (
+							<Link to={`/user-profile/${agent.id}`}>
+								<Styled.Card className='teste'>
+									<Styled.CardImage>
+										<ImageAtom
+											src={`${agent.thumbnail.path}.${agent.thumbnail.extension}`}
+											alt='Imagem do agente'
+										/>
+									</Styled.CardImage>
+									<Styled.CardDescription>
+										<Styled.AgentName>
+											<SpanAtom text={agent.name} />
+										</Styled.AgentName>
+										<Styled.AgentDescription>
+											<SpanAtom text={agent.description} />
+										</Styled.AgentDescription>
+									</Styled.CardDescription>
+								</Styled.Card>
+							</Link>
+						)
+					})}
 				</Styled.CardsContainer>
 				<Styled.PagesContainer>
 					<div>
@@ -71,3 +76,28 @@ const DashboardMolecule: React.FC = () => {
 }
 
 export default DashboardMolecule
+
+{
+	/* {state.agents.map(agent => {
+					return (
+						<Styled.CardsContainer>
+							<Styled.Card key={agent.id} onClick={navigateToProfile}>
+								<Styled.CardImage>
+									<ImageAtom
+										src={`${agent.thumbnail.path}.${agent.thumbnail.extension}`}
+										alt='agent image'
+									/>
+								</Styled.CardImage>
+								<Styled.CardDescription>
+									<Styled.AgentName>
+										<SpanAtom text={agent.name} />
+									</Styled.AgentName>
+									<Styled.AgentDescription>
+										<SpanAtom text={agent.description} />
+									</Styled.AgentDescription>
+								</Styled.CardDescription>
+							</Styled.Card>
+						</Styled.CardsContainer>
+					)
+				})} */
+}

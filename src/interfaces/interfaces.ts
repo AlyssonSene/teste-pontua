@@ -48,3 +48,14 @@ export interface ISpan {
 export interface IListOptions {
 	list: string[]
 }
+
+export interface IAgents {
+	id: number
+	name: string
+	description: string
+	modified: ''
+	thumbnail: {
+		path: string
+		extension: string
+	}
+}

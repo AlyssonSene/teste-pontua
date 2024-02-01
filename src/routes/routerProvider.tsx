@@ -13,14 +13,18 @@ import AuthorsMolecule from '../components/molecules/AuthorsMolecle'
 const router = createBrowserRouter([
 	{
 		path: '/',
+		element: <LoginPage />
+	},
+	{
+		path: '/home',
 		element: <HomePage />,
 		children: [
 			{
-				path: '/',
+				path: '/home',
 				element: <DashboardMolecule />
 			},
 			{
-				path: 'user-profile',
+				path: 'user-profile/:id',
 				element: <AgentProfileMolecule />,
 				children: [
 					{
@@ -35,11 +39,6 @@ const router = createBrowserRouter([
 			}
 		]
 	},
-	{
-		path: '/login',
-		element: <LoginPage />
-	},
-
 	{
 		path: '/recovery',
 		element: <RecoveryPassPage />

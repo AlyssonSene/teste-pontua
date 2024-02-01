@@ -5,6 +5,7 @@ import ButtonImage from '../atoms/ButtonImage'
 import InputAtom from '../atoms/InputAtom'
 import ButtomAtom from '../atoms/ButtonAtom'
 import emailIcon from '../../assets/emailIcon.svg'
+import { Link } from 'react-router-dom'
 
 const PassRecoveryMolecule: React.FC = () => {
 	return (
@@ -23,9 +24,11 @@ const PassRecoveryMolecule: React.FC = () => {
 				<InputAtom placeholder={'Informe seu email'} type={'email'} />
 				<ButtonImage type={'email'} icon={emailIcon} />
 			</Styled.LoginEmailInput>
-			<Styled.LoginButtom>
-				<ButtomAtom text='Enviar link'></ButtomAtom>
-			</Styled.LoginButtom>
+			<Link to={'/'}>
+				<Styled.LoginButtom>
+					<ButtomAtom text='Enviar link'></ButtomAtom>
+				</Styled.LoginButtom>
+			</Link>
 		</Styled.FormLoginContainer>
 	)
 }

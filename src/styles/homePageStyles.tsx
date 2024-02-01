@@ -106,28 +106,22 @@ export const LogoutButtonContainer = styled.div`
 export const Dashoboard = styled.div`
 	display: flex;
 	flex-direction: column;
-	justify-content: space-between;
 	align-items: center;
 	height: 100vh;
+	background-color: #1f61db;
 `
 
 export const CardsContainer = styled.div`
-	& span {
-		:hover {
-			background: #c6cbd4;
-		}
-	}
-	cursor: pointer;
 	display: flex;
 	width: 100%;
 	flex-wrap: wrap;
-	justify-content: center;
+	justify-content: space-evenly;
+	align-items: center;
 	& > :nth-last-child(-n + 2) {
-		flex-grow: 0.2;
-		align-items: flex-start;
-		& > :nth-last-child(-n + 1) {
-			& > :nth-last-child(-n + 1) {
-				width: 410px;
+		& > :nth-last-child(-n + 2) {
+			width: 580px;
+			& > :nth-child(2) {
+				width: 100%;
 			}
 		}
 	}
@@ -135,6 +129,8 @@ export const CardsContainer = styled.div`
 
 export const Card = styled.div`
 	display: flex;
+	width: 268px;
+	height: 160px;
 	margin: 20px 0 0 20px;
 	align-items: center;
 	padding: 14px 10px;
@@ -147,13 +143,20 @@ export const CardImage = styled.div`
 	width: 83px;
 	height: 119px;
 	margin: 0 15px;
+	& > img {
+		width: 83px;
+		height: 119px;
+	}
 `
 
 export const CardDescription = styled.div`
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
-	gap: 10px;
+	width: 140px;
+	height: 122px;
+	overflow: hidden;
+	text-overflow: ellipsis;
 `
 
 export const AgentName = styled.div`
