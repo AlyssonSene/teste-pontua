@@ -24,7 +24,7 @@ const PassRecoveryMolecule: React.FC = () => {
 				<InputAtom placeholder={'Informe seu email'} type={'email'} />
 				<ButtonImage type={'email'} icon={emailIcon} />
 			</Styled.LoginEmailInput>
-			<Link to={'/'}>
+			<Link to={'/success-recovery'}>
 				<Styled.LoginButtom>
 					<ButtomAtom text='Enviar link'></ButtomAtom>
 				</Styled.LoginButtom>

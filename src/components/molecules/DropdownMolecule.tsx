@@ -1,13 +1,17 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import * as Styled from '../../styles/dropdownStyles'
-import { IOptions, IOptionsSelect } from '../../interfaces/interfaces'
+import { IAgent, IOptionsSelect } from '../../interfaces/interfaces'
+import { useAppContext } from '../../context/hook'
 
-const DropdownAtom: React.FC<IOptionsSelect> = ({ options }) => {
+const DropdownAtom: React.FC<IOptionsSelect> = ({ agents }) => {
+	const { state } = useAppContext()
 	const [isOpen, setIsOpen] = useState(false)
-	const [agent, setAgent] = useState<IOptions | null>(options[0])
+	const [agent, setAgent] = useState<IAgent>(agents[0])
 	const [rotated, setRotated] = useState(false)
 
-	const handleOptionClick = (agent: IOptions) => {
+	const handleOptionClick = (agent: IAgent) => {
+		state.selectedAgent = agent
+		console.log(state)
 		setAgent(agent)
 		setIsOpen(!isOpen)
 		setRotated(!rotated)
@@ -16,6 +20,10 @@ const DropdownAtom: React.FC<IOptionsSelect> = ({ options }) => {
 	const handleClick = (value: boolean) => {
 		setRotated(!value)
 	}
+
+	useEffect(() => {
+		state.selectedAgent = agent
+	})
 
 	return (
 		<Styled.DropdownContainer>
@@ -26,20 +34,26 @@ const DropdownAtom: React.FC<IOptionsSelect> = ({ options }) => {
 				}}
 			>
 				<Styled.SelectedOption>
-					<Styled.Avatar src={agent?.avatar} alt={'avatar'} />
+					<Styled.Avatar
+						src={`${agent?.thumbnail.path}.${agent?.thumbnail.extension}`}
+						alt={`${agent?.name} avatar`}
+					/>
 					<Styled.Name>{agent?.name}</Styled.Name>
 				</Styled.SelectedOption>
 				<Styled.CaretIcon rotate={rotated.toString()} />
 			</Styled.DropdownButton>
 			<Styled.OptionsContainer style={{ display: isOpen ? 'block' : 'none' }}>
 				<Styled.OptionsList>
-					{options.map(option => (
+					{agents.map(agent => (
 						<Styled.Option
-							key={option.id}
-							onClick={() => handleOptionClick(option)}
+							key={agent.id}
+							onClick={() => handleOptionClick(agent)}
 						>
-							<Styled.Avatar src={option.avatar} alt={option.name} />
-							<Styled.Name>{option.name}</Styled.Name>
+							<Styled.Avatar
+								src={`${agent?.thumbnail.path}.${agent?.thumbnail.extension}`}
+								alt={`${agent?.name} avatar`}
+							/>
+							<Styled.Name>{agent.name}</Styled.Name>
 						</Styled.Option>
 					))}
 				</Styled.OptionsList>

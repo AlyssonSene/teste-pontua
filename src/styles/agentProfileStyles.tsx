@@ -96,6 +96,9 @@ export const AboutAgentContainer = styled.div`
 	display: flex;
 	border-radius: 15px;
 	box-shadow: 0px 6px 18px 0px rgba(0, 0, 0, 0.06);
+	& > img {
+		width: 110px;
+	}
 `
 
 export const DescriptionContainer = styled.div`

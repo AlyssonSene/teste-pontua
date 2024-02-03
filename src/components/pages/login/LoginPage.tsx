@@ -3,7 +3,7 @@ import * as Styled from '../../../styles/loginStyles'
 import ImageAtom from '../../atoms/ImageAtom'
 import buildingImage from '../../../assets/building.svg'
 import LogoPontua from '../../../assets/logo_pontua_white.svg'
-import LoginOrganism from '../../organisms/LoginOrganism'
+import { Outlet } from 'react-router-dom'
 
 const LoginPage: React.FC = () => {
 	return (
@@ -15,7 +15,7 @@ const LoginPage: React.FC = () => {
 				<Styled.BuildingContainer>
 					<ImageAtom src={buildingImage} alt='building' />
 				</Styled.BuildingContainer>
-				<LoginOrganism />
+				<Outlet />
 			</Styled.Container>
 		</Styled.MainLoginPage>
 	)

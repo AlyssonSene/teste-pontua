@@ -1,7 +1,7 @@
 import { createContext } from 'react'
-import { IAgents } from '../interfaces/interfaces'
+import { IAgent } from '../interfaces/interfaces'
 
-const agents: IAgents = {
+const agent: IAgent = {
 	id: 0,
 	name: '',
 	description: '',
@@ -13,7 +13,8 @@ const agents: IAgents = {
 }
 
 export const INITIAL_STATE = {
-	agents: [agents]
+	agents: [agent],
+	selectedAgent: agent
 }
 
 export const AppContext = createContext({ state: INITIAL_STATE })

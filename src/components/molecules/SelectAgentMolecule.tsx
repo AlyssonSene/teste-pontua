@@ -2,21 +2,13 @@ import React from 'react'
 import * as Styled from '../../styles/loginStyles'
 import TitleAtom from '../atoms/TitleAtom'
 import Dropdown from './DropdownMolecule'
-import avatar from '../../assets/pontua.ico'
 import { EnterButton } from '../../styles/dropdownStyles'
 import ButtonAtom from '../atoms/ButtonAtom'
+import { Link } from 'react-router-dom'
+import { useAppContext } from '../../context/hook'
 
 const SelectAgentMolecule: React.FC = () => {
-	const options = [
-		{ id: 1, name: 'João', avatar },
-		{ id: 2, name: 'Maria', avatar },
-		{ id: 3, name: 'Maria', avatar },
-		{ id: 4, name: 'Maria', avatar },
-		{ id: 5, name: 'Maria', avatar },
-		{ id: 6, name: 'Maria', avatar },
-		{ id: 7, name: 'Maria', avatar },
-		{ id: 8, name: 'Pedro', avatar }
-	]
+	const { state } = useAppContext()
 	return (
 		<Styled.FormLoginContainer>
 			<Styled.LoginFormTitle>
@@ -32,9 +24,11 @@ const SelectAgentMolecule: React.FC = () => {
 					text='Tenha a visão completa do seu agente.'
 				></TitleAtom>
 			</Styled.LoginFormSubtitle>
-			<Dropdown options={options} />
+			<Dropdown agents={state.agents} />
 			<EnterButton>
-				<ButtonAtom text='Entrar' />
+				<Link to={`/home/user-profile/${state.selectedAgent.id}`}>
+					<ButtonAtom text='Entrar' />
+				</Link>
 			</EnterButton>
 		</Styled.FormLoginContainer>
 	)

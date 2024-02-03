@@ -103,7 +103,7 @@ export const EnterButton = styled.div`
 	justify-content: flex-end;
 	margin-right: 37px;
 	align-items: center;
-	& > button {
+	& > a {
 		border-radius: 8px;
 		border: 1px solid var(--blue-800, #00113d);
 		background: var(--blue-800, #00113d);
@@ -116,5 +116,17 @@ export const EnterButton = styled.div`
 		font-weight: 600;
 		line-height: 24px;
 		cursor: pointer;
+		& > button {
+			border: 1px solid var(--blue-800, #00113d);
+			background: var(--blue-800, #00113d);
+			box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+			color: var(--White, #fff);
+			font-family: Inter;
+			font-size: 16px;
+			font-style: normal;
+			font-weight: 600;
+			line-height: 24px;
+			cursor: pointer;
+		}
 	}
 `

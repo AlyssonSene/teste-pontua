@@ -9,11 +9,23 @@ import TeamsMolecule from '../components/molecules/TeamsMolecule'
 import PowersMolecule from '../components/molecules/PowersMolecule'
 import SpeciesMolecule from '../components/molecules/SpeciesMolecule'
 import AuthorsMolecule from '../components/molecules/AuthorsMolecle'
+import LoginOrganism from '../components/organisms/LoginOrganism'
+import SelectAgentMolecule from '../components/molecules/SelectAgentMolecule'
 
 const router = createBrowserRouter([
 	{
 		path: '/',
-		element: <LoginPage />
+		element: <LoginPage />,
+		children: [
+			{
+				path: '/',
+				element: <LoginOrganism />
+			},
+			{
+				path: '/select-agent',
+				element: <SelectAgentMolecule />
+			}
+		]
 	},
 	{
 		path: '/home',
@@ -31,16 +43,20 @@ const router = createBrowserRouter([
 						path: '',
 						element: <AboutAgentMolecule />
 					},
-					{ path: 'teams', element: <TeamsMolecule /> },
-					{ path: 'powers', element: <PowersMolecule /> },
-					{ path: 'species', element: <SpeciesMolecule /> },
-					{ path: 'authors', element: <AuthorsMolecule /> }
+					{ path: 'teams/', element: <TeamsMolecule /> },
+					{ path: 'powers/', element: <PowersMolecule /> },
+					{ path: 'species/', element: <SpeciesMolecule /> },
+					{ path: 'authors/', element: <AuthorsMolecule /> }
 				]
 			}
 		]
 	},
 	{
 		path: '/recovery',
+		element: <RecoveryPassPage />
+	},
+	{
+		path: '/success-recovery',
 		element: <RecoveryPassPage />
 	}
 ])

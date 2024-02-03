@@ -18,9 +18,9 @@ const DashboardMolecule: React.FC = () => {
 			<SearchBar />
 			<Styled.Dashoboard>
 				<Styled.CardsContainer>
-					{agents.map(agent => {
+					{agents.map((agent, index) => {
 						return (
-							<Link to={`/user-profile/${agent.id}`}>
+							<Link to={`/user-profile/${agent.id}`} key={index}>
 								<Styled.Card className='teste'>
 									<Styled.CardImage>
 										<ImageAtom

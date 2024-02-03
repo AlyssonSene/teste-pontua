@@ -18,7 +18,6 @@ export interface ITitleAtom {
 }
 
 export interface ILinkAtom {
-	url?: string
 	text: string
 }
 
@@ -26,15 +25,8 @@ export interface IButtonImage {
 	icon: string
 	type: string
 }
-
-export interface IOptions {
-	avatar: string
-	name: string
-	id: number
-}
-
 export interface IOptionsSelect {
-	options: IOptions[]
+	agents: IAgent[]
 }
 
 export interface ICaretIconProps {
@@ -49,7 +41,7 @@ export interface IListOptions {
 	list: string[]
 }
 
-export interface IAgents {
+export interface IAgent {
 	id: number
 	name: string
 	description: string

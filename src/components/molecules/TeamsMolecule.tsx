@@ -1,8 +1,12 @@
 import React from 'react'
 import ListAtom from '../atoms/ListAtom'
 import { InfosContainer } from '../../styles/agentProfileStyles'
+// import { useAppContext } from '../../context/hook'
 
 const TeamsMolecule: React.FC = () => {
+	// const {
+	// 	state: { selectedAgent }
+	// } = useAppContext()
 	const teams = [
 		'Avengers',
 		'Defenders',

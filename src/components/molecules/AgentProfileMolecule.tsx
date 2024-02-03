@@ -14,7 +14,7 @@ const AgentProfileMolecule: React.FC = () => {
 				<TitleAtom text={'Wolverine'} color=' #777' />
 			</Styled.AgentNameContainer>
 			<Styled.MenubarContainer>
-				<Link to={'/user-profile'}>
+				<Link to={'/home/user-profile'}>
 					<Styled.MenuOptions>
 						<SpanAtom text='Visão Geral' />
 						<Styled.UnderLine />

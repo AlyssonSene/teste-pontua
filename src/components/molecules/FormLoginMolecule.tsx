@@ -36,7 +36,7 @@ const FormLoginMolecule: React.FC = () => {
 				<InputAtom placeholder={'Informe sua senha'} type={'password'} />
 				<ButtonImage type={'password'} icon={secretIcon} />
 			</Styled.LoginPassInput>
-			<Link to={'/home'}>
+			<Link to={'/select-agent'}>
 				<Styled.LoginButtom>
 					<ButtomAtom text='Entrar'></ButtomAtom>
 					<ButtonImage type={'email'} icon={loginIcon} />
