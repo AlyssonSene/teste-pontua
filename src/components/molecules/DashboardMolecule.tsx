@@ -9,16 +9,14 @@ import ArrowRight from '../../assets/arrowRightIcon.svg'
 import { useAppContext } from '../../context/hook'
 
 const DashboardMolecule: React.FC = () => {
-	const {
-		state: { agents }
-	} = useAppContext()
+	const { state } = useAppContext()
 
 	return (
 		<Styled.DashboardContainer>
 			<SearchBar />
 			<Styled.Dashoboard>
 				<Styled.CardsContainer>
-					{agents.map((agent, index) => {
+					{state.agents.map((agent, index) => {
 						return (
 							<Link to={`/user-profile/${agent.id}`} key={index}>
 								<Styled.Card className='teste'>
@@ -76,28 +74,3 @@ const DashboardMolecule: React.FC = () => {
 }
 
 export default DashboardMolecule
-
-{
-	/* {state.agents.map(agent => {
-					return (
-						<Styled.CardsContainer>
-							<Styled.Card key={agent.id} onClick={navigateToProfile}>
-								<Styled.CardImage>
-									<ImageAtom
-										src={`${agent.thumbnail.path}.${agent.thumbnail.extension}`}
-										alt='agent image'
-									/>
-								</Styled.CardImage>
-								<Styled.CardDescription>
-									<Styled.AgentName>
-										<SpanAtom text={agent.name} />
-									</Styled.AgentName>
-									<Styled.AgentDescription>
-										<SpanAtom text={agent.description} />
-									</Styled.AgentDescription>
-								</Styled.CardDescription>
-							</Styled.Card>
-						</Styled.CardsContainer>
-					)
-				})} */
-}

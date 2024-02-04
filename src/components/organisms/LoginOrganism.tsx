@@ -19,6 +19,7 @@ const LoginOrganism: React.FC = () => {
 			})
 
 			state.agents = response.data.data.results
+			console.log(state)
 		} catch (e) {
 			console.log(e)
 		}

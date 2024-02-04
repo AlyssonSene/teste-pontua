@@ -10,10 +10,11 @@ export interface IInputAtom {
 
 export interface IButtomAtom {
 	text: string
+	func?: (agent: IAgent) => void
 }
 
 export interface ITitleAtom {
-	text: string
+	text?: string
 	color?: string
 }
 
@@ -41,13 +42,14 @@ export interface IListOptions {
 	list: string[]
 }
 
+interface Thumbnail {
+	path: string
+	extension: string
+}
 export interface IAgent {
 	id: number
 	name: string
 	description: string
-	modified: ''
-	thumbnail: {
-		path: string
-		extension: string
-	}
+	modified: string
+	thumbnail: Thumbnail
 }

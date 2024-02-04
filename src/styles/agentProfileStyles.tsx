@@ -11,9 +11,8 @@ export const AgentProfileContainer = styled.div`
 
 export const AgentNameContainer = styled.div`
 	display: flex;
-	justify-content: center;
 	align-items: center;
-	width: 169px;
+	width: 100%;
 	height: 25px;
 	margin-bottom: 23px;
 	background-color: #ffffff;

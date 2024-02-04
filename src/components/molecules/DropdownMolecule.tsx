@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import * as Styled from '../../styles/dropdownStyles'
 import { IAgent, IOptionsSelect } from '../../interfaces/interfaces'
 import { useAppContext } from '../../context/hook'
@@ -6,13 +6,12 @@ import { useAppContext } from '../../context/hook'
 const DropdownAtom: React.FC<IOptionsSelect> = ({ agents }) => {
 	const { state } = useAppContext()
 	const [isOpen, setIsOpen] = useState(false)
-	const [agent, setAgent] = useState<IAgent>(agents[0])
 	const [rotated, setRotated] = useState(false)
+	const [selectedAgent, setSeletedAgent] = useState(agents[0])
 
 	const handleOptionClick = (agent: IAgent) => {
-		state.selectedAgent = agent
-		console.log(state)
-		setAgent(agent)
+		state.setSelectedAgent(agent)
+		setSeletedAgent(agent)
 		setIsOpen(!isOpen)
 		setRotated(!rotated)
 	}
@@ -20,10 +19,6 @@ const DropdownAtom: React.FC<IOptionsSelect> = ({ agents }) => {
 	const handleClick = (value: boolean) => {
 		setRotated(!value)
 	}
-
-	useEffect(() => {
-		state.selectedAgent = agent
-	})
 
 	return (
 		<Styled.DropdownContainer>
@@ -35,10 +30,10 @@ const DropdownAtom: React.FC<IOptionsSelect> = ({ agents }) => {
 			>
 				<Styled.SelectedOption>
 					<Styled.Avatar
-						src={`${agent?.thumbnail.path}.${agent?.thumbnail.extension}`}
-						alt={`${agent?.name} avatar`}
+						src={`${selectedAgent?.thumbnail.path}.${selectedAgent?.thumbnail.extension}`}
+						alt={`${selectedAgent?.name} avatar`}
 					/>
-					<Styled.Name>{agent?.name}</Styled.Name>
+					<Styled.Name>{selectedAgent?.name}</Styled.Name>
 				</Styled.SelectedOption>
 				<Styled.CaretIcon rotate={rotated.toString()} />
 			</Styled.DropdownButton>

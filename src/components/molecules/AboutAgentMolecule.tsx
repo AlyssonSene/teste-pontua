@@ -5,21 +5,19 @@ import TitleAtom from '../atoms/TitleAtom'
 import { useAppContext } from '../../context/hook'
 
 const AboutAgentMolecule: React.FC = () => {
-	const {
-		state: { selectedAgent }
-	} = useAppContext()
+	const { state } = useAppContext()
 	return (
 		<Styled.AboutAgentContainer>
 			<ImageAtom
-				src={`${selectedAgent.thumbnail.path}.${selectedAgent.thumbnail.extension}`}
+				src={`${state.selectedAgent.thumbnail.path}.${state.selectedAgent.thumbnail.extension}`}
 				alt='Agent profile image'
 			/>
 			<Styled.DescriptionContainer>
 				<Styled.AgentName>
-					<TitleAtom text={selectedAgent.name} />
+					<TitleAtom text={state.selectedAgent.name} />
 				</Styled.AgentName>
 				<Styled.AgentDescription>
-					<TitleAtom text={selectedAgent.description} />
+					<TitleAtom text={state.selectedAgent.description} />
 				</Styled.AgentDescription>
 			</Styled.DescriptionContainer>
 		</Styled.AboutAgentContainer>
