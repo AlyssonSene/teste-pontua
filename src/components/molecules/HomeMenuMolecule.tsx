@@ -18,13 +18,13 @@ const HomeMenuMolecule: React.FC = () => {
 			</Styled.LogoContainer>
 			<Styled.HomeButtonContainer>
 				<ImageAtom src={HomeIcon} alt='home icon' />
-				<Link to='/home' onClick={() => console.log(state)}>
+				<Link to='/home'>
 					<TitleAtom text='Home' color='#F21A05' />
 				</Link>
 			</Styled.HomeButtonContainer>
 			<Styled.HomeButtonContainer>
 				<ImageAtom src={profileIcon} alt='profile icon' />
-				<Link to={`/home/user-profile/${state.selectedAgent.id}`}>
+				<Link to={`/home/user-profile/${state.selectedAgent?.id}`}>
 					<TitleAtom text='Perfil' />
 				</Link>
 			</Styled.HomeButtonContainer>

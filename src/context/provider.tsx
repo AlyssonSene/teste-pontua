@@ -5,10 +5,13 @@ import {
 	createContext,
 	useState
 } from 'react'
-import { IAgent } from '../interfaces/interfaces'
+import { IAgent, IUser } from '../interfaces/interfaces'
 
 export interface IAppContext {
+	user: IUser
+	setUser: Dispatch<SetStateAction<IUser>>
 	agents: IAgent[]
+	setAgents: Dispatch<SetStateAction<IAgent[]>>
 	selectedAgent: IAgent | null
 	setSelectedAgent: Dispatch<SetStateAction<IAgent | null>>
 	successRecovery: boolean
@@ -16,7 +19,10 @@ export interface IAppContext {
 }
 
 const INITIAL_STATE: IAppContext = {
+	user: { name: '', password: '' },
+	setUser: () => {},
 	agents: [],
+	setAgents: () => {},
 	selectedAgent: null,
 	setSelectedAgent: () => {},
 	successRecovery: false,
@@ -32,14 +38,18 @@ type ProviderProps = {
 export const AppContextProvider = ({ children }: ProviderProps) => {
 	const [selectedAgent, setSelectedAgent] = useState<IAgent | null>(null)
 	const [successRecovery, setSuccessRecovery] = useState<boolean>(false)
-	const agents: IAgent[] = []
+	const [agents, setAgents] = useState<IAgent[]>([])
+	const [user, setUser] = useState<IUser>({ name: '', password: '' })
 
 	const initial_state = {
 		agents,
+		setAgents,
 		selectedAgent,
 		setSelectedAgent,
 		successRecovery,
-		setSuccessRecovery
+		setSuccessRecovery,
+		user,
+		setUser
 	}
 
 	return (

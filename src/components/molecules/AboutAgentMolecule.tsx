@@ -9,15 +9,15 @@ const AboutAgentMolecule: React.FC = () => {
 	return (
 		<Styled.AboutAgentContainer>
 			<ImageAtom
-				src={`${state.selectedAgent.thumbnail.path}.${state.selectedAgent.thumbnail.extension}`}
+				src={`${state.selectedAgent?.thumbnail.path}.${state.selectedAgent?.thumbnail.extension}`}
 				alt='Agent profile image'
 			/>
 			<Styled.DescriptionContainer>
 				<Styled.AgentName>
-					<TitleAtom text={state.selectedAgent.name} />
+					<TitleAtom text={state.selectedAgent?.name} />
 				</Styled.AgentName>
 				<Styled.AgentDescription>
-					<TitleAtom text={state.selectedAgent.description} />
+					<TitleAtom text={state.selectedAgent?.description} />
 				</Styled.AgentDescription>
 			</Styled.DescriptionContainer>
 		</Styled.AboutAgentContainer>

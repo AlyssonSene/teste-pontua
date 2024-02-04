@@ -6,6 +6,7 @@ export interface IImageAtom {
 export interface IInputAtom {
 	type: string
 	placeholder: string
+	onChange?: (value: string) => void
 }
 
 export interface IButtomAtom {
@@ -56,4 +57,9 @@ export interface IAgent {
 
 export interface IRecovery {
 	state: true | false
+}
+
+export interface IUser {
+	name: string
+	password: string
 }

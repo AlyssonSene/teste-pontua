@@ -1,9 +1,10 @@
 {
-  "users": [
-    {
-      "id": 1,
-      "name": "Alysson Sene",
-      "email": "alyssonsene@outlook.com"
-    }
-  ]
+	"users": [
+		{
+			"id": 1,
+			"name": "Alysson Sene",
+			"email": "alyssonsene@outlook.com",
+			"token": "123456"
+		}
+	]
 }

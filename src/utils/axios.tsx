@@ -4,17 +4,22 @@ const axiosInstance: AxiosInstance = axios.create({
 	baseURL: 'http://gateway.marvel.com/v1/public/characters?',
 	headers: {
 		'Content-Type': 'application/json'
-	},
+	}
 })
 
-axiosInstance.interceptors.response.use(
-	response => {
-		return response
-	},
-	error => {
-		console.error('Erro ao realizar a requisição:', error)
-		return Promise.reject(error)
-	}
-)
-
 export default axiosInstance
+
+/**
+ import axios, { AxiosInstance } from 'axios'
+
+const createAxiosInstance = (baseURL: string): AxiosInstance => {
+  return axios.create({
+    baseURL,
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  })
+}
+
+export default createAxiosInstance
+ */

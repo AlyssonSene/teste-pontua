@@ -18,7 +18,7 @@ const LoginOrganism: React.FC = () => {
 				params: { ts: ts, apikey: publicKey, hash: hash, limit: 10, offset: 50 }
 			})
 
-			state.agents = response.data.data.results
+			state.setAgents(response.data.data.results)
 			state.setSuccessRecovery(false)
 		} catch (e) {
 			console.log(e)

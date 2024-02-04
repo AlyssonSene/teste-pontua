@@ -1,4 +1,3 @@
-import React from 'react'
 import * as Styled from '../../styles/loginStyles'
 import ButtomAtom from '../atoms/ButtonAtom'
 import ImageAtom from '../atoms/ImageAtom'
@@ -11,8 +10,16 @@ import emailIcon from '../../assets/emailIcon.svg'
 import secretIcon from '../../assets/passSecrete.svg'
 import loginIcon from '../../assets/login.svg'
 import { Link } from 'react-router-dom'
+import { useAppContext } from '../../context/hook'
 
 const FormLoginMolecule: React.FC = () => {
+	const { state } = useAppContext()
+
+	const checkUser = () => {
+		if (state.user.name === '' || state.user.password === '') {
+			alert('Email e senha obrigatórios')
+		}
+	}
 	return (
 		<Styled.FormLoginContainer>
 			<Styled.LoginFormTitle>
@@ -37,7 +44,7 @@ const FormLoginMolecule: React.FC = () => {
 				<ButtonImage type={'password'} icon={secretIcon} />
 			</Styled.LoginPassInput>
 			<Link to={'/select-agent'}>
-				<Styled.LoginButtom>
+				<Styled.LoginButtom onClick={checkUser}>
 					<ButtomAtom text='Entrar'></ButtomAtom>
 					<ButtonImage type={'email'} icon={loginIcon} />
 				</Styled.LoginButtom>

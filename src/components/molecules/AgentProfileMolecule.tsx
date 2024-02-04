@@ -13,10 +13,10 @@ const AgentProfileMolecule: React.FC = () => {
 			<Styled.AgentNameContainer>
 				<TitleAtom text={'Perfil'} color=' #081B4E' />
 				<TitleAtom text={'/'} color=' #F43724' />
-				<TitleAtom text={state.selectedAgent.name} color=' #777' />
+				<TitleAtom text={state.selectedAgent?.name} color=' #777' />
 			</Styled.AgentNameContainer>
 			<Styled.MenubarContainer>
-				<Link to={`/home/user-profile/${state.selectedAgent.id}`}>
+				<Link to={`/home/user-profile/${state.selectedAgent?.id}`}>
 					<Styled.MenuOptions>
 						<SpanAtom text='Visão Geral' />
 						<Styled.UnderLine />
