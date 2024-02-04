@@ -8,8 +8,8 @@ const SuccessRecovery: React.FC = () => {
 	return (
 		<Styled.FormLoginContainer>
 			<Styled.LoginFormTitle>
-				<TitleAtom color={'#081B4E'} text='Tudo certo'></TitleAtom>
-				<TitleAtom color={'#F43724'} text=' ;)'></TitleAtom>
+				<TitleAtom color={'#081B4E'} text='Tudo certo' />
+				<TitleAtom color={'#F43724'} text=' ;)' />
 			</Styled.LoginFormTitle>
 			<Styled.LoginFormSubtitle>
 				<TitleAtom
@@ -17,11 +17,11 @@ const SuccessRecovery: React.FC = () => {
 					text='Foi enviado um e-mail para você com instruções de como redefinir a sua senha.'
 				></TitleAtom>
 			</Styled.LoginFormSubtitle>
-			<Styled.LoginButtom>
-				<Link to={'/login'}>
+			<Link to={'/'}>
+				<Styled.LoginButtom>
 					<ButtomAtom text='Voltar para o login'></ButtomAtom>
-				</Link>
-			</Styled.LoginButtom>
+				</Styled.LoginButtom>
+			</Link>
 		</Styled.FormLoginContainer>
 	)
 }

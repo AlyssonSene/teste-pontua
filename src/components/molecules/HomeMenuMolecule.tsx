@@ -6,8 +6,11 @@ import HomeIcon from '../../assets/homeIcon.svg'
 import profileIcon from '../../assets/profileIcon.svg'
 import LogoutIcon from '../../assets/logoutIcon.svg'
 import TitleAtom from '../atoms/TitleAtom'
+import { Link } from 'react-router-dom'
+import { useAppContext } from '../../context/hook'
 
 const HomeMenuMolecule: React.FC = () => {
+	const { state } = useAppContext()
 	return (
 		<Styled.HomeMenuContainer>
 			<Styled.LogoContainer>
@@ -15,15 +18,21 @@ const HomeMenuMolecule: React.FC = () => {
 			</Styled.LogoContainer>
 			<Styled.HomeButtonContainer>
 				<ImageAtom src={HomeIcon} alt='home icon' />
-				<TitleAtom text='Home' color='#F21A05' />
+				<Link to='/home' onClick={() => console.log(state)}>
+					<TitleAtom text='Home' color='#F21A05' />
+				</Link>
 			</Styled.HomeButtonContainer>
 			<Styled.HomeButtonContainer>
 				<ImageAtom src={profileIcon} alt='profile icon' />
-				<TitleAtom text='Perfil' />
+				<Link to={`/home/user-profile/${state.selectedAgent.id}`}>
+					<TitleAtom text='Perfil' />
+				</Link>
 			</Styled.HomeButtonContainer>
 			<Styled.LogoutButtonContainer>
 				<ImageAtom src={LogoutIcon} alt='Logout icon' />
-				<TitleAtom text='Sair' />
+				<Link to={'/'}>
+					<TitleAtom text='Sair' />
+				</Link>
 			</Styled.LogoutButtonContainer>
 		</Styled.HomeMenuContainer>
 	)

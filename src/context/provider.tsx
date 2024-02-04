@@ -9,21 +9,19 @@ import { IAgent } from '../interfaces/interfaces'
 
 export interface IAppContext {
 	agents: IAgent[]
-	selectedAgent: IAgent
-	setSelectedAgent: Dispatch<SetStateAction<IAgent>>
+	selectedAgent: IAgent | null
+	setSelectedAgent: Dispatch<SetStateAction<IAgent | null>>
+	successRecovery: boolean
+	setSuccessRecovery: Dispatch<SetStateAction<boolean>>
 }
 
-const INITIAL_STATE = {
+const INITIAL_STATE: IAppContext = {
 	agents: [],
-	selectedAgent: {
-		id: 0,
-		name: '',
-		description: '',
-		modified: '',
-		thumbnail: { path: '', extension: '' }
-	},
-	setSelectedAgent: () => {}
-} as IAppContext
+	selectedAgent: null,
+	setSelectedAgent: () => {},
+	successRecovery: false,
+	setSuccessRecovery: () => {}
+}
 
 export const AppContext = createContext({ state: INITIAL_STATE })
 
@@ -32,16 +30,17 @@ type ProviderProps = {
 }
 
 export const AppContextProvider = ({ children }: ProviderProps) => {
-	const [selectedAgent, setSelectedAgent] = useState<IAgent>({
-		id: 0,
-		description: '',
-		name: '',
-		modified: '',
-		thumbnail: { path: '', extension: '' }
-	})
+	const [selectedAgent, setSelectedAgent] = useState<IAgent | null>(null)
+	const [successRecovery, setSuccessRecovery] = useState<boolean>(false)
 	const agents: IAgent[] = []
 
-	const initial_state = { agents, selectedAgent, setSelectedAgent }
+	const initial_state = {
+		agents,
+		selectedAgent,
+		setSelectedAgent,
+		successRecovery,
+		setSuccessRecovery
+	}
 
 	return (
 		<AppContext.Provider value={{ state: initial_state }}>

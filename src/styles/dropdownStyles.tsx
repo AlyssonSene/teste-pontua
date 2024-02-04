@@ -26,6 +26,15 @@ export const SelectedOption = styled.div`
 	align-items: center;
 `
 
+export const FilterDropdown = styled.div`
+	display: flex;
+	& > input {
+		border: none;
+		outline: none;
+		margin-left: 15px;
+	}
+`
+
 export const Avatar = styled.img`
 	width: 32px;
 	height: 32px;

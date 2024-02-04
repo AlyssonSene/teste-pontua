@@ -62,7 +62,7 @@ export const HomeButtonContainer = styled.div`
 	align-items: center;
 	width: 220px;
 	height: 34px;
-	& > span {
+	& > a {
 		margin-top: 5px;
 		margin-left: 10px;
 		display: flex;
@@ -85,7 +85,7 @@ export const LogoutButtonContainer = styled.div`
 	width: 220px;
 	height: 34px;
 	margin-top: 50px;
-	& > span {
+	& > a {
 		margin-top: 5px;
 		margin-left: 10px;
 		display: flex;
@@ -108,7 +108,6 @@ export const Dashoboard = styled.div`
 	flex-direction: column;
 	align-items: center;
 	height: 100vh;
-	background-color: #1f61db;
 `
 
 export const CardsContainer = styled.div`

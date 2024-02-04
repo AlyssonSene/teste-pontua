@@ -7,9 +7,14 @@ import SpanAtom from '../atoms/SpanAtom'
 import ArrowLeft from '../../assets/arrowLeftIcon.svg'
 import ArrowRight from '../../assets/arrowRightIcon.svg'
 import { useAppContext } from '../../context/hook'
+import { IAgent } from '../../interfaces/interfaces'
 
 const DashboardMolecule: React.FC = () => {
 	const { state } = useAppContext()
+
+	const changeSelectedAgent = (agent: IAgent) => {
+		state.setSelectedAgent(agent)
+	}
 
 	return (
 		<Styled.DashboardContainer>
@@ -18,7 +23,11 @@ const DashboardMolecule: React.FC = () => {
 				<Styled.CardsContainer>
 					{state.agents.map((agent, index) => {
 						return (
-							<Link to={`/user-profile/${agent.id}`} key={index}>
+							<Link
+								to={`user-profile/${agent.id}`}
+								key={index}
+								onClick={() => changeSelectedAgent(agent)}
+							>
 								<Styled.Card className='teste'>
 									<Styled.CardImage>
 										<ImageAtom

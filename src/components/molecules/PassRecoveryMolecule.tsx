@@ -6,8 +6,14 @@ import InputAtom from '../atoms/InputAtom'
 import ButtomAtom from '../atoms/ButtonAtom'
 import emailIcon from '../../assets/emailIcon.svg'
 import { Link } from 'react-router-dom'
+import { useAppContext } from '../../context/hook'
 
 const PassRecoveryMolecule: React.FC = () => {
+	const { state } = useAppContext()
+
+	const hancleClickSuccess = () => {
+		state.setSuccessRecovery(true)
+	}
 	return (
 		<Styled.FormLoginContainer>
 			<Styled.LoginFormTitle>
@@ -25,7 +31,7 @@ const PassRecoveryMolecule: React.FC = () => {
 				<ButtonImage type={'email'} icon={emailIcon} />
 			</Styled.LoginEmailInput>
 			<Link to={'/success-recovery'}>
-				<Styled.LoginButtom>
+				<Styled.LoginButtom onClick={hancleClickSuccess}>
 					<ButtomAtom text='Enviar link'></ButtomAtom>
 				</Styled.LoginButtom>
 			</Link>

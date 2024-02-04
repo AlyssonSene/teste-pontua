@@ -1,13 +1,14 @@
-import React, { useState } from 'react'
+import React from 'react'
 import * as Styled from '../../../styles/loginStyles'
 import ImageAtom from '../../atoms/ImageAtom'
 import PassRecoveryMolecule from '../../molecules/PassRecoveryMolecule'
 import logoPontua from '../../../assets/logo_pontua_white.svg'
 import buildingImage from '../../../assets/building.svg'
 import SuccessRecovery from '../../molecules/SuccessRecoveryMolecule'
+import { useAppContext } from '../../../context/hook'
 
 const RecoveryPassPage: React.FC = () => {
-	const [teste] = useState(false)
+	const { state } = useAppContext()
 	return (
 		<Styled.MainLoginPage>
 			<Styled.LogoContainer>
@@ -17,7 +18,7 @@ const RecoveryPassPage: React.FC = () => {
 				<Styled.BuildingContainer>
 					<ImageAtom src={buildingImage} alt='building' />
 				</Styled.BuildingContainer>
-				{teste ? <SuccessRecovery /> : <PassRecoveryMolecule />}
+				{state.successRecovery ? <SuccessRecovery /> : <PassRecoveryMolecule />}
 			</Styled.Container>
 		</Styled.MainLoginPage>
 	)

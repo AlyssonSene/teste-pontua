@@ -133,8 +133,7 @@ export const LoginPassInput = styled.div`
 		border: none;
 		outline: none;
 		padding: 20px 0;
-		align-items: center;
-		color: #b7b7b7;
+		color: #737373;
 		font-family: Epilogue;
 		font-size: 16px;
 		font-style: normal;

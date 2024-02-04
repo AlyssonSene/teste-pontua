@@ -53,3 +53,7 @@ export interface IAgent {
 	modified: string
 	thumbnail: Thumbnail
 }
+
+export interface IRecovery {
+	state: true | false
+}

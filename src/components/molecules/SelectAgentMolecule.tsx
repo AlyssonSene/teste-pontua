@@ -26,7 +26,7 @@ const SelectAgentMolecule: React.FC = () => {
 			</Styled.LoginFormSubtitle>
 			<Dropdown agents={state.agents} />
 			<EnterButton>
-				<Link to={`/home/user-profile/${state.selectedAgent.id}`}>
+				<Link to={`/home/user-profile/${state.selectedAgent?.id}`}>
 					<ButtonAtom text='Entrar' />
 				</Link>
 			</EnterButton>

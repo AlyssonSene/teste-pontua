@@ -2,16 +2,17 @@ import React, { useState } from 'react'
 import * as Styled from '../../styles/dropdownStyles'
 import { IAgent, IOptionsSelect } from '../../interfaces/interfaces'
 import { useAppContext } from '../../context/hook'
+import ImageAtom from '../atoms/ImageAtom'
+import profileIcon from '../../assets/profileIcon.svg'
+import InputAtom from '../atoms/InputAtom'
 
 const DropdownAtom: React.FC<IOptionsSelect> = ({ agents }) => {
 	const { state } = useAppContext()
 	const [isOpen, setIsOpen] = useState(false)
 	const [rotated, setRotated] = useState(false)
-	const [selectedAgent, setSeletedAgent] = useState(agents[0])
 
 	const handleOptionClick = (agent: IAgent) => {
 		state.setSelectedAgent(agent)
-		setSeletedAgent(agent)
 		setIsOpen(!isOpen)
 		setRotated(!rotated)
 	}
@@ -28,13 +29,22 @@ const DropdownAtom: React.FC<IOptionsSelect> = ({ agents }) => {
 					handleClick(rotated)
 				}}
 			>
-				<Styled.SelectedOption>
-					<Styled.Avatar
-						src={`${selectedAgent?.thumbnail.path}.${selectedAgent?.thumbnail.extension}`}
-						alt={`${selectedAgent?.name} avatar`}
-					/>
-					<Styled.Name>{selectedAgent?.name}</Styled.Name>
-				</Styled.SelectedOption>
+				{!state.selectedAgent ? (
+					<Styled.SelectedOption>
+						<Styled.FilterDropdown>
+							<ImageAtom src={profileIcon} alt='profile icon' />
+							<InputAtom placeholder='Selecione um agent' type={'text'} />
+						</Styled.FilterDropdown>
+					</Styled.SelectedOption>
+				) : (
+					<Styled.SelectedOption>
+						<Styled.Avatar
+							src={`${state.selectedAgent.thumbnail.path}.${state.selectedAgent.thumbnail.extension}`}
+							alt={`${state.selectedAgent.name} avatar`}
+						/>
+						<Styled.Name>{state.selectedAgent.name}</Styled.Name>
+					</Styled.SelectedOption>
+				)}
 				<Styled.CaretIcon rotate={rotated.toString()} />
 			</Styled.DropdownButton>
 			<Styled.OptionsContainer style={{ display: isOpen ? 'block' : 'none' }}>

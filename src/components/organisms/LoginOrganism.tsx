@@ -19,7 +19,7 @@ const LoginOrganism: React.FC = () => {
 			})
 
 			state.agents = response.data.data.results
-			console.log(state)
+			state.setSuccessRecovery(false)
 		} catch (e) {
 			console.log(e)
 		}
